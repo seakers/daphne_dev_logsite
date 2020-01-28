@@ -47,34 +47,31 @@
 
     <div class="row" style="padding-top: 30px;">
         <div class="col-1"></div>
-        <div class="col-5">
-            <div style="text-align: center; font-weight: bold; font-size: x-large">
-                Standard Output
-            </div>
-            <div class="card card-body bg-light">
-                <div class="outtext">
-
-                </div>
+        <div class="col-11">
+            <div class = "btn-group btn-group-toggle" data-toggle = "buttons">
+                    <button type="button" class="btn btn-dark" id="outputButton" >Standard Output</button>
+                    <button type="button" class="btn btn-dark" id="errorButton" >Standard Error</button>
             </div>
         </div>
-
-        <div class="col-5">
-            <div style="text-align: center; font-weight: bold; font-size: x-large">
-                Standard Error
-            </div>
-            <div class="card card-body bg-light">
-                <div class="errtext">
-
-                </div>
-            </div>
-        </div>
-        <div class="col-1"></div>
     </div>
 
+    <div class="row">
+        <div class="col-1"></div>
 
+        <div class="col-10">
+            <div class="card card-body bg-light">
+                <div class="outtext" id="outputtext">
+                    out
+                </div>
 
+                <div class="errtext" id="errortext" style="display: none;">
+                    err
+                </div>
+            </div>
+        </div>
 
-
+        <div class="col-1"></div>
+    </div>
 
 </div> <!-- Container end -->
 
@@ -148,6 +145,16 @@
                     $(".errtext").html(data);
                 }
             });
+        });
+
+        $("#outputButton").click(function() {
+            $("#outputtext").show();
+            $("#errortext").hide();
+        });
+
+        $("#errorButton").click(function() {
+            $("#outputtext").hide();
+            $("#errortext").show();
         });
 
 
