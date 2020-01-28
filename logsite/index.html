@@ -52,7 +52,7 @@
                 Standard Output
             </div>
             <div class="card card-body bg-light">
-                <div class="text">
+                <div class="stdtext">
 
                 </div>
             </div>
@@ -63,7 +63,7 @@
                 Standard Error
             </div>
             <div class="card card-body bg-light">
-                <div class="text">
+                <div class="errtext">
 
                 </div>
             </div>
@@ -72,7 +72,7 @@
     </div>
 
 
-    
+
 
 
 
@@ -84,13 +84,29 @@
     $(document).ready(function () {
         $("#interfaceLogs").click(function() {
             $.ajax({
-                url : "https://dev.selva-research.com/logs/",
+                url : "https://dev.selva-research.com/logs/interface.out.log",
                 dataType: "text",
                 success : function (data) {
-                    $(".text").html(data);
+                    $(".stdtext").html(data);
+                }
+            });
+            $.ajax({
+                url : "https://dev.selva-research.com/logs/interface.err.log",
+                dataType: "text",
+                success : function (data) {
+                    $(".errtext").html(data);
                 }
             });
         });
+
+
+
+        
+
+
+
+
+
     });
 
 
