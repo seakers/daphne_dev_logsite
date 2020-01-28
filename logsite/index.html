@@ -25,16 +25,16 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav ml-auto">
             <li class="nav-item active">
-                <a class="nav-link" href="#">Interface</a>
+                <a class="nav-link" href="">Interface</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Brain</a>
+                <a class="nav-link" href="">Brain</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Vassar</a>
+                <a class="nav-link" href="">Vassar</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Datamining</a>
+                <a class="nav-link" href="">Datamining</a>
             </li>
         </ul>
     </div>
@@ -45,13 +45,38 @@
 
 <div class="container-fluid container-height">
 
+    <div class="button">
+        <input type="button" id="getLogs"/>
+    </div>
 
+    <div class="text">
+
+    </div>
 
 
 
 </div> <!-- Container end -->
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+<script>
+    $(document).ready(function () {
+        $("#getLogs").click(function() {
+            $.ajax({
+                url : "https://dev.selva-research.com/logs/",
+                dataType: "text",
+                success : function (data) {
+                    $(".text").html(data);
+                }
+            });
+        });
+    });
+
+
+</script>
+
+
+
 </body>
 
 </html>
