@@ -116,6 +116,40 @@
             });
         });
 
+        $("#vassarLogs").click(function() {
+            $.ajax({
+                url : "https://dev.selva-research.com/logs/vassar.out.log",
+                dataType: "text",
+                success : function (data) {
+                    $(".outtext").html(data);
+                }
+            });
+            $.ajax({
+                url : "https://dev.selva-research.com/logs/vassar.err.log",
+                dataType: "text",
+                success : function (data) {
+                    $(".errtext").html(data);
+                }
+            });
+        });
+
+        $("#dataminingLogs").click(function() {
+            $.ajax({
+                url : "https://dev.selva-research.com/logs/datamining.out.log",
+                dataType: "text",
+                success : function (data) {
+                    $(".outtext").html(data);
+                }
+            });
+            $.ajax({
+                url : "https://dev.selva-research.com/logs/datamining.err.log",
+                dataType: "text",
+                success : function (data) {
+                    $(".errtext").html(data);
+                }
+            });
+        });
+
 
 
 
