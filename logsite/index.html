@@ -52,7 +52,7 @@
                 Standard Output
             </div>
             <div class="card card-body bg-light">
-                <div class="stdtext">
+                <div class="outtext">
 
                 </div>
             </div>
@@ -87,7 +87,7 @@
                 url : "https://dev.selva-research.com/logs/interface.out.log",
                 dataType: "text",
                 success : function (data) {
-                    $(".stdtext").html(data);
+                    $(".outtext").html(data);
                 }
             });
             $.ajax({
@@ -99,9 +99,26 @@
             });
         });
 
+        $("#brainLogs").click(function() {
+            $.ajax({
+                url : "https://dev.selva-research.com/logs/brain.out.log",
+                dataType: "text",
+                success : function (data) {
+                    $(".outtext").html(data);
+                }
+            });
+            $.ajax({
+                url : "https://dev.selva-research.com/logs/brain.err.log",
+                dataType: "text",
+                success : function (data) {
+                    $(".errtext").html(data);
+                }
+            });
+        });
 
 
-        
+
+
 
 
 
