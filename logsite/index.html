@@ -44,20 +44,18 @@
         </ul>
     </nav>
 
-    <div class="container">
+
+
+    <div class="container-fluid">
         <div class="card full-card-height d-none" id="interfaceCollapse">
             <div class="card-body">
                 <h5 class="card-title">Interface</h5>
                 <h6 class="card-subtitle mb-2 text-muted">Frontend</h6>
                 <ul class="list-group list-group-flush">
                     <li class="list-group-item">
-                        <div class="btn-group btn-group-toggle btn-block" data-toggle="buttons" style="padding-bottom: 10px;">
-                            <label class="btn btn-secondary active">
-                                <input type="radio" name="options"  autocomplete="off" checked> Output Logs
-                            </label>
-                            <label class="btn btn-secondary">
-                                <input type="radio" name="options"  autocomplete="off"> Error Logs
-                            </label>
+                        <div class="btn-group" role="group" aria-label="Basic example" style="padding-bottom: 10px;">
+                            <button type="button" class="btn btn-secondary" id="interfaceOutput">Standard Output</button>
+                            <button type="button" class="btn btn-secondary" id="interfaceError">Standard Error</button>
                         </div>
                         <div class="card-text log-window" style="font-family: 'Anonymous Pro', monospace;">
                             Some quick example text to build on the card title and make up the bulk of the card's content.
@@ -118,13 +116,9 @@
                 <h6 class="card-subtitle mb-2 text-muted">Backend</h6>
                 <ul class="list-group list-group-flush">
                     <li class="list-group-item">
-                        <div class="btn-group btn-group-toggle btn-block" data-toggle="buttons" style="padding-bottom: 10px;">
-                            <label class="btn btn-secondary active">
-                                <input type="radio" name="options"  autocomplete="off" checked> Output Logs
-                            </label>
-                            <label class="btn btn-secondary">
-                                <input type="radio" name="options"  autocomplete="off"> Error Logs
-                            </label>
+                        <div class="btn-group" role="group" aria-label="Basic example" style="padding-bottom: 10px;">
+                            <button type="button" class="btn btn-secondary" id="brainOutput">Standard Output</button>
+                            <button type="button" class="btn btn-secondary" id="brainError">Standard Error</button>
                         </div>
                         <div class="card-text log-window" style="font-family: 'Anonymous Pro', monospace;">
                             Some quick example text to build on the card title and make up the bulk of the card's content.
@@ -185,13 +179,9 @@
                 <h6 class="card-subtitle mb-2 text-muted">Service</h6>
                 <ul class="list-group list-group-flush">
                     <li class="list-group-item">
-                        <div class="btn-group btn-group-toggle btn-block" data-toggle="buttons" style="padding-bottom: 10px;">
-                            <label class="btn btn-secondary active">
-                                <input type="radio" name="options"  autocomplete="off" checked> Output Logs
-                            </label>
-                            <label class="btn btn-secondary">
-                                <input type="radio" name="options"  autocomplete="off"> Error Logs
-                            </label>
+                        <div class="btn-group" role="group" aria-label="Basic example" style="padding-bottom: 10px;">
+                            <button type="button" class="btn btn-secondary" id="vassarOutput">Standard Output</button>
+                            <button type="button" class="btn btn-secondary" id="vassarError">Standard Error</button>
                         </div>
                         <div class="card-text log-window" style="font-family: 'Anonymous Pro', monospace;">
                             Some quick example text to build on the card title and make up the bulk of the card's content.
@@ -252,13 +242,9 @@
                 <h6 class="card-subtitle mb-2 text-muted">Service</h6>
                 <ul class="list-group list-group-flush">
                     <li class="list-group-item">
-                        <div class="btn-group btn-group-toggle btn-block" data-toggle="buttons" style="padding-bottom: 10px;">
-                            <label class="btn btn-secondary active">
-                                <input type="radio" name="options"  autocomplete="off" checked> Output Logs
-                            </label>
-                            <label class="btn btn-secondary">
-                                <input type="radio" name="options"  autocomplete="off"> Error Logs
-                            </label>
+                        <div class="btn-group" role="group" aria-label="Basic example" style="padding-bottom: 10px;">
+                            <button type="button" class="btn btn-secondary" id="dataminingOutput">Standard Output</button>
+                            <button type="button" class="btn btn-secondary" id="dataminingError">Standard Error</button>
                         </div>
                         <div class="card-text log-window" style="font-family: 'Anonymous Pro', monospace;">
                             Some quick example text to build on the card title and make up the bulk of the card's content.
@@ -384,6 +370,91 @@
         $('#sidebarSelector').on('click', function () {
             $('#sidebar').toggleClass('active');
         });
+
+
+
+        $('#interfaceOutput').on('click', function () {
+            console.log(this);
+            $.ajax({
+                url : "https://dev.selva-research.com/logs/interface.out.log",
+                dataType: "text",
+                success : function (data) {
+                    $(".log-window").html(data);
+                }
+            });
+        });
+        $('#interfaceError').on('click', function () {
+            console.log(this);
+            $.ajax({
+                url : "https://dev.selva-research.com/logs/interface.err.log",
+                dataType: "text",
+                success : function (data) {
+                    $(".log-window").html(data);
+                }
+            });
+        });
+        $('#brainOutput').on('click', function () {
+            console.log(this);
+            $.ajax({
+                url : "https://dev.selva-research.com/logs/brain.out.log",
+                dataType: "text",
+                success : function (data) {
+                    $(".log-window").html(data);
+                }
+            });
+        });
+        $('#brainError').on('click', function () {
+            console.log(this);
+            $.ajax({
+                url : "https://dev.selva-research.com/logs/brain.err.log",
+                dataType: "text",
+                success : function (data) {
+                    $(".log-window").html(data);
+                }
+            });
+        });
+        $('#vassarOutput').on('click', function () {
+            console.log(this);
+            $.ajax({
+                url : "https://dev.selva-research.com/logs/vassar.out.log",
+                dataType: "text",
+                success : function (data) {
+                    $(".log-window").html(data);
+                }
+            });
+        });
+        $('#vassarError').on('click', function () {
+            console.log(this);
+            $.ajax({
+                url : "https://dev.selva-research.com/logs/vassar.err.log",
+                dataType: "text",
+                success : function (data) {
+                    $(".log-window").html(data);
+                }
+            });
+        });
+        $('#dataminingOutput').on('click', function () {
+            console.log(this);
+            $.ajax({
+                url : "https://dev.selva-research.com/logs/datamining.out.log",
+                dataType: "text",
+                success : function (data) {
+                    $(".log-window").html(data);
+                }
+            });
+        });
+        $('#dataminingError').on('click', function () {
+            console.log(this);
+            $.ajax({
+                url : "https://dev.selva-research.com/logs/datamining.err.log",
+                dataType: "text",
+                success : function (data) {
+                    $(".log-window").html(data);
+                }
+            });
+        });
+
+
 
         $('#interfaceSelector').on('click', function () {
             $('#interfaceSelector').toggleClass('selectorOn');
