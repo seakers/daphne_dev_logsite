@@ -379,7 +379,7 @@
                 url : "https://dev.selva-research.com/logs/interface.out.log",
                 dataType: "text",
                 success : function (data) {
-                    $(".log-window").html(data);
+                    $(".log-window").text(data);
                 }
             });
         });
@@ -389,7 +389,7 @@
                 url : "https://dev.selva-research.com/logs/interface.err.log",
                 dataType: "text",
                 success : function (data) {
-                    $(".log-window").html(data);
+                    $(".log-window").text(data);
                 }
             });
         });
@@ -537,86 +537,6 @@
         });
 
 
-
-
-
-        // $("#interfaceLogs").click(function() {
-        //     $.ajax({
-        //         url : "https://dev.selva-research.com/logs/interface.out.log",
-        //         dataType: "text",
-        //         success : function (data) {
-        //             $(".outtext").html(data);
-        //         }
-        //     });
-        //     $.ajax({
-        //         url : "https://dev.selva-research.com/logs/interface.err.log",
-        //         dataType: "text",
-        //         success : function (data) {
-        //             $(".errtext").html(data);
-        //         }
-        //     });
-        // });
-        //
-        // $("#brainLogs").click(function() {
-        //     $.ajax({
-        //         url : "https://dev.selva-research.com/logs/brain.out.log",
-        //         dataType: "text",
-        //         success : function (data) {
-        //             $(".outtext").html(data);
-        //         }
-        //     });
-        //     $.ajax({
-        //         url : "https://dev.selva-research.com/logs/brain.err.log",
-        //         dataType: "text",
-        //         success : function (data) {
-        //             $(".errtext").html(data);
-        //         }
-        //     });
-        // });
-        //
-        // $("#vassarLogs").click(function() {
-        //     $.ajax({
-        //         url : "https://dev.selva-research.com/logs/vassar.out.log",
-        //         dataType: "text",
-        //         success : function (data) {
-        //             $(".outtext").html(data);
-        //         }
-        //     });
-        //     $.ajax({
-        //         url : "https://dev.selva-research.com/logs/vassar.err.log",
-        //         dataType: "text",
-        //         success : function (data) {
-        //             $(".errtext").html(data);
-        //         }
-        //     });
-        // });
-        //
-        // $("#dataminingLogs").click(function() {
-        //     $.ajax({
-        //         url : "https://dev.selva-research.com/logs/datamining.out.log",
-        //         dataType: "text",
-        //         success : function (data) {
-        //             $(".outtext").html(data);
-        //         }
-        //     });
-        //     $.ajax({
-        //         url : "https://dev.selva-research.com/logs/datamining.err.log",
-        //         dataType: "text",
-        //         success : function (data) {
-        //             $(".errtext").html(data);
-        //         }
-        //     });
-        // });
-        //
-        // $("#outputButton").click(function() {
-        //     $("#outputtext").show();
-        //     $("#errortext").hide();
-        // });
-        //
-        // $("#errorButton").click(function() {
-        //     $("#outputtext").hide();
-        //     $("#errortext").show();
-        // });
 
 
 
