@@ -379,7 +379,8 @@
                 url : "https://dev.selva-research.com/logs/interface.out.log",
                 dataType: "text",
                 success : function (data) {
-                    $(".log-window").text(data);
+                    data.replace(/\n/g, '<br>');
+                    $(".log-window").html(data);
                 }
             });
         });
@@ -389,7 +390,7 @@
                 url : "https://dev.selva-research.com/logs/interface.err.log",
                 dataType: "text",
                 success : function (data) {
-                    $(".log-window").text(data);
+                    $(".log-window").html(data);
                 }
             });
         });
